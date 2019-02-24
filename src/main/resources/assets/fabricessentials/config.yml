@@ -1,0 +1,29 @@
+#Fabric Essentials Config File
+
+#Enables the home feature
+#/home /homes /sethome
+feature-homes: true
+#The maximum amount of homes a non op player can have
+player-homes-count: 3
+
+#Enables the gamemode feature
+#Adds /gmc /gms /gm1 /gm0 /gma /gmsp /gm 1 /gm 2 /gm 3 /gm s /gm a
+feature-gamemode: true
+
+#Enables the time feature
+#/day /night /poll day/night
+feature-time: true
+
+#Enables the weather feature
+#/toggledownfall
+feature-weather: true
+
+#Enables the warps feature
+#/setwarp /warp /warps
+feature-warps: true
+
+#Enabled the fly feature
+feature-fly: true
+
+#Enable the spawn feature
+feature-spawn: true

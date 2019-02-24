@@ -1,0 +1,17 @@
+{
+  "id": "fabricessentials",
+  "name": "Fabric Essentials",
+  "description": "All the essentials you need for fabric",
+  "version": "1.0.0",
+  "side": "universal",
+  "initializers": [
+    "nerdhub.fabricessentials.FabricEssentials"
+  ],
+  "requires": {
+    "fabric": "*"
+  },
+  "mixins": {
+    "client": "fabricessentials.client.json",
+    "common": "fabricessentials.common.json"
+  }
+}
