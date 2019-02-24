@@ -4,7 +4,9 @@ What exactly is Fabric Essentials?
 Think of it as Forge Essentials, or Essentials/EssentialsX for Spigot,
 but much smaller, and for fabric!
  
-*Current commands*
+Current commands
+
+*and more coming soon, feel free to suggest any you might want*
 
 **Homes:**
     
@@ -16,10 +18,10 @@ but much smaller, and for fabric!
     
 **Gamemode:**
 
-    /gmc or /gm1 or /gm c- Creative gamemode
-    /gms or /gm0 or /gm s- Survival gamemode
-    /gma or /gm2 /gm a - Adventure gamemode
-    /gmsp or /gm3 /gm sp - Spectator gamemode
+    /gmc or /gm1 or /gm c or /gamemode 1 - Creative gamemode
+    /gms or /gm0 or /gm s or /gamemode 0 - Survival gamemode
+    /gma or /gm2 /gm a or /gamemode 2 - Adventure gamemode
+    /gmsp or /gm3 /gm sp /gamemode 3 - Spectator gamemode
     
 **Spawn:**
 
