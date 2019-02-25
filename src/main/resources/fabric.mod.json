@@ -8,7 +8,8 @@
     "nerdhub.fabricessentials.FabricEssentials"
   ],
   "requires": {
-    "fabric": "*"
+    "fabric": "*",
+    "abusedlib": "*"
   },
   "mixins": {
     "client": "fabricessentials.client.json",

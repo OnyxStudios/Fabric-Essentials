@@ -10,7 +10,7 @@ import net.minecraft.text.TranslatableTextComponent;
 public class WeatherCommands {
 
     public static void registerWeatherCommands() {
-        CommandRegistry.INSTANCE.register(true, serverCommandSourceCommandDispatcher -> ServerCommandManager.literal("toggledownfall")
+        CommandRegistry.INSTANCE.register(false, serverCommandSourceCommandDispatcher -> ServerCommandManager.literal("toggledownfall")
                 .requires(source -> source.hasPermissionLevel(4))
                 .executes(context -> {
                     ServerPlayerEntity playerEntity = context.getSource().getPlayer();

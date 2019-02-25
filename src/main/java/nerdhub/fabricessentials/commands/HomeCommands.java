@@ -17,7 +17,7 @@ public class HomeCommands {
     public static int maxPlayerHomes = FabricEssentials.config.getInt("player-homes-count");
 
     public static void registerHomeCommands() {
-        CommandRegistry.INSTANCE.register(true, serverCommandSourceCommandDispatcher -> serverCommandSourceCommandDispatcher.register(
+        CommandRegistry.INSTANCE.register(false, serverCommandSourceCommandDispatcher -> serverCommandSourceCommandDispatcher.register(
                 ServerCommandManager
                         .literal("sethome")
                         .executes(context -> {
@@ -44,7 +44,7 @@ public class HomeCommands {
                     return 1;
                 }))));
 
-        CommandRegistry.INSTANCE.register(true, serverCommandSourceCommandDispatcher -> serverCommandSourceCommandDispatcher.register(
+        CommandRegistry.INSTANCE.register(false, serverCommandSourceCommandDispatcher -> serverCommandSourceCommandDispatcher.register(
                 ServerCommandManager
                         .literal("homes")
                         .executes(context -> {
@@ -58,7 +58,7 @@ public class HomeCommands {
                             return state.getHomes(playerEntity.getUuid()).size();
                         })));
 
-        CommandRegistry.INSTANCE.register(true, serverCommandSourceCommandDispatcher -> serverCommandSourceCommandDispatcher.register(
+        CommandRegistry.INSTANCE.register(false, serverCommandSourceCommandDispatcher -> serverCommandSourceCommandDispatcher.register(
                 ServerCommandManager.literal("home")
                         .executes(context -> {
                             ServerPlayerEntity playerEntity = context.getSource().getPlayer();
@@ -92,7 +92,7 @@ public class HomeCommands {
                 }))
         ));
 
-        CommandRegistry.INSTANCE.register(true, serverCommandSourceCommandDispatcher -> serverCommandSourceCommandDispatcher.register(
+        CommandRegistry.INSTANCE.register(false, serverCommandSourceCommandDispatcher -> serverCommandSourceCommandDispatcher.register(
                 ServerCommandManager
                         .literal("delhome")
                         .then(ServerCommandManager.argument("homename", StringArgumentType.string()).executes(context -> {

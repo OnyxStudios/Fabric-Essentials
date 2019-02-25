@@ -17,7 +17,7 @@ public class TimeCommands {
     public static TimePoll timePoll;
 
     public static void registerTimeCommands() {
-        CommandRegistry.INSTANCE.register(true, serverCommandSourceCommandDispatcher -> ServerCommandManager.literal("day")
+        CommandRegistry.INSTANCE.register(false, serverCommandSourceCommandDispatcher -> ServerCommandManager.literal("day")
                 .requires(source -> source.hasPermissionLevel(4))
                 .executes(context -> {
                     context.getSource().getWorld().setTime(0);
@@ -25,7 +25,7 @@ public class TimeCommands {
                     return 1;
                 }));
 
-        CommandRegistry.INSTANCE.register(true, serverCommandSourceCommandDispatcher -> ServerCommandManager.literal("night")
+        CommandRegistry.INSTANCE.register(false, serverCommandSourceCommandDispatcher -> ServerCommandManager.literal("night")
                 .requires(source -> source.hasPermissionLevel(4))
                 .executes(context -> {
                     context.getSource().getWorld().setTime(13000);
@@ -33,7 +33,7 @@ public class TimeCommands {
                     return 1;
                 }));
 
-        CommandRegistry.INSTANCE.register(true, serverCommandSourceCommandDispatcher -> ServerCommandManager.literal("poll")
+        CommandRegistry.INSTANCE.register(false, serverCommandSourceCommandDispatcher -> ServerCommandManager.literal("poll")
                 .then(ServerCommandManager.argument("time", StringArgumentType.string())
                         .executes(context -> {
                             ServerPlayerEntity playerEntity = context.getSource().getPlayer();

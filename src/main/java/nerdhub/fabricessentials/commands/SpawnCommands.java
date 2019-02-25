@@ -11,7 +11,7 @@ import net.minecraft.util.math.BlockPos;
 public class SpawnCommands {
 
     public static void registerSpawnCommands() {
-        CommandRegistry.INSTANCE.register(true, serverCommandSourceCommandDispatcher -> ServerCommandManager.literal("spawn").executes(context -> {
+        CommandRegistry.INSTANCE.register(false, serverCommandSourceCommandDispatcher -> ServerCommandManager.literal("spawn").executes(context -> {
             ServerPlayerEntity playerEntity = context.getSource().getPlayer();
             BlockPos spawnPos = context.getSource().getWorld().getSpawnPos();
 
@@ -20,7 +20,7 @@ public class SpawnCommands {
             return 1;
         }));
 
-        CommandRegistry.INSTANCE.register(true, serverCommandSourceCommandDispatcher -> ServerCommandManager.literal("setspawn")
+        CommandRegistry.INSTANCE.register(false, serverCommandSourceCommandDispatcher -> ServerCommandManager.literal("setspawn")
                 .requires(source -> source.hasPermissionLevel(4))
                 .executes(context -> {
             ServerPlayerEntity playerEntity = context.getSource().getPlayer();

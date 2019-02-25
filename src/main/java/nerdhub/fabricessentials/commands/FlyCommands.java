@@ -7,7 +7,7 @@ import net.minecraft.server.network.ServerPlayerEntity;
 public class FlyCommands {
 
     public static void registerFlyCommands() {
-        CommandRegistry.INSTANCE.register(true, serverCommandSourceCommandDispatcher -> ServerCommandManager.literal("fly")
+        CommandRegistry.INSTANCE.register(false, serverCommandSourceCommandDispatcher -> ServerCommandManager.literal("fly")
                 .requires(source -> source.hasPermissionLevel(4))
                 .executes(context -> {
                     ServerPlayerEntity playerEntity = context.getSource().getPlayer();

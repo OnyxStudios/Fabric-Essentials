@@ -27,16 +27,14 @@ public class GamemodeCommands {
             put("gmsp", GameMode.SPECTATOR);
         }};
 
-        gamemodesMap.forEach((name, gameMode) -> {
-            CommandRegistry.INSTANCE.register(true, serverCommandSourceCommandDispatcher -> ServerCommandManager.literal(name)
-                    .requires(source -> source.hasPermissionLevel(4))
-                    .executes(context -> {
-                        context.getSource().getPlayer().setGameMode(gameMode);
-                        return 1;
-                    }));
-        });
+        gamemodesMap.forEach((name, gameMode) -> CommandRegistry.INSTANCE.register(false, serverCommandSourceCommandDispatcher -> ServerCommandManager.literal(name)
+                .requires(source -> source.hasPermissionLevel(4))
+                .executes(context -> {
+                    context.getSource().getPlayer().setGameMode(gameMode);
+                    return 1;
+                })));
 
-        CommandRegistry.INSTANCE.register(true, serverCommandSourceCommandDispatcher -> {
+        CommandRegistry.INSTANCE.register(false, serverCommandSourceCommandDispatcher -> {
             ArgumentBuilder<ServerCommandSource, ?> builder = serverCommandSourceCommandDispatcher.getRoot().getChild("gamemode").createBuilder();
 
             for (GameMode mode : GameMode.values()) {
@@ -50,7 +48,7 @@ public class GamemodeCommands {
             serverCommandSourceCommandDispatcher.register((LiteralArgumentBuilder<ServerCommandSource>) builder);
         });
 
-        CommandRegistry.INSTANCE.register(true, serverCommandSourceCommandDispatcher -> ServerCommandManager.literal("gm")
+        CommandRegistry.INSTANCE.register(false, serverCommandSourceCommandDispatcher -> ServerCommandManager.literal("gm")
                 .requires(source -> source.hasPermissionLevel(4))
                 .then(ServerCommandManager.argument("mode", IntegerArgumentType.integer())
                         .executes(context -> {

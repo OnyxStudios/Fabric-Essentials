@@ -14,7 +14,7 @@ import net.minecraft.util.math.BlockPos;
 public class WarpsCommands {
 
     public static void registerWarpsCommands() {
-        CommandRegistry.INSTANCE.register(true, serverCommandSourceCommandDispatcher -> ServerCommandManager.literal("warp")
+        CommandRegistry.INSTANCE.register(false, serverCommandSourceCommandDispatcher -> ServerCommandManager.literal("warp")
                 .then(ServerCommandManager.argument("name", StringArgumentType.string()).executes(context -> {
                     ServerPlayerEntity playerEntity = context.getSource().getPlayer();
                     WarpsPersistentState state = WarpsPersistentState.get(context.getSource().getWorld());
@@ -25,7 +25,7 @@ public class WarpsCommands {
                     return 1;
                 })));
 
-        CommandRegistry.INSTANCE.register(true, serverCommandSourceCommandDispatcher -> ServerCommandManager.literal("setwarp")
+        CommandRegistry.INSTANCE.register(false, serverCommandSourceCommandDispatcher -> ServerCommandManager.literal("setwarp")
                 .requires(source -> source.hasPermissionLevel(4))
                 .then(ServerCommandManager.argument("name", StringArgumentType.string()).executes(context -> {
                     ServerPlayerEntity playerEntity = context.getSource().getPlayer();
@@ -36,7 +36,7 @@ public class WarpsCommands {
                     return 1;
                 })));
 
-        CommandRegistry.INSTANCE.register(true, serverCommandSourceCommandDispatcher -> ServerCommandManager.literal("delwarp")
+        CommandRegistry.INSTANCE.register(false, serverCommandSourceCommandDispatcher -> ServerCommandManager.literal("delwarp")
                 .then(ServerCommandManager.argument("name", StringArgumentType.string()).executes(context -> {
                     ServerPlayerEntity playerEntity = context.getSource().getPlayer();
                     WarpsPersistentState state = WarpsPersistentState.get(context.getSource().getWorld());
@@ -51,7 +51,7 @@ public class WarpsCommands {
                     return 1;
                 })));
 
-        CommandRegistry.INSTANCE.register(true, serverCommandSourceCommandDispatcher -> ServerCommandManager.literal("warps").executes(context -> {
+        CommandRegistry.INSTANCE.register(false, serverCommandSourceCommandDispatcher -> ServerCommandManager.literal("warps").executes(context -> {
             ServerPlayerEntity playerEntity = context.getSource().getPlayer();
             WarpsPersistentState state = WarpsPersistentState.get(context.getSource().getWorld());
 
