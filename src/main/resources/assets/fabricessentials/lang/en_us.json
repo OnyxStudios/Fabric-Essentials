@@ -5,6 +5,7 @@
   "homes.nonexist": "Home %s does not exist!",
   "homes.maximumlimit": "You have reached the maximum homes limit!",
   "gamemode.invalidgm": "Gamemode %s is not a valid gamemode!",
+  "gamemode.switch": "Set gamemode to %s",
   "weather.clearweather": "Weather has been cleared!",
   "weather.rainweather": "Weather is now rainy!",
   "time.day": "Set the time to day!",
@@ -21,5 +22,7 @@
   "warps.nonexistent": "Invalid warp name, %s",
   "warps.delwarp": "Deleted warp, %s",
   "spawn.teleported": "Successfully teleported to spawn!",
-  "spawn.set": "Successfully set the spawn position!"
+  "spawn.set": "Successfully set the spawn position!",
+  "fly.enabled": "Fly has been enabled.",
+  "fly.disabled": "Fly has been disabled."
 }

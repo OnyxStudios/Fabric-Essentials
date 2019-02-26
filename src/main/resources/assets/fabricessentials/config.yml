@@ -23,7 +23,13 @@ feature-weather: true
 feature-warps: true
 
 #Enabled the fly feature
+#/fly
 feature-fly: true
 
 #Enable the spawn feature
+#/spawn /setspawn
 feature-spawn: true
+
+#Enable the clearchat feature
+#/cc personal /cca server wide
+feature-clearchat: true

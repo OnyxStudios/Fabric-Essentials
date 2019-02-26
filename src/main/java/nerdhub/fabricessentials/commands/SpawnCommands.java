@@ -11,22 +11,27 @@ import net.minecraft.util.math.BlockPos;
 public class SpawnCommands {
 
     public static void registerSpawnCommands() {
-        CommandRegistry.INSTANCE.register(false, serverCommandSourceCommandDispatcher -> ServerCommandManager.literal("spawn").executes(context -> {
-            ServerPlayerEntity playerEntity = context.getSource().getPlayer();
-            BlockPos spawnPos = context.getSource().getWorld().getSpawnPos();
+        CommandRegistry.INSTANCE.register(false, serverCommandSourceCommandDispatcher -> {
+            serverCommandSourceCommandDispatcher.register(
+                    ServerCommandManager.literal("spawn").executes(context -> {
+                        ServerPlayerEntity playerEntity = context.getSource().getPlayer();
+                        BlockPos spawnPos = context.getSource().getWorld().getSpawnPos();
 
-            playerEntity.networkHandler.teleportRequest(spawnPos.getX(), spawnPos.getY(), spawnPos.getZ(), playerEntity.pitch, playerEntity.yaw);
-            playerEntity.addChatMessage(new TranslatableTextComponent("spawn.teleported").setStyle(new Style().setColor(TextFormat.GOLD)), true);
-            return 1;
-        }));
+                        playerEntity.networkHandler.teleportRequest(spawnPos.getX(), spawnPos.getY(), spawnPos.getZ(), playerEntity.pitch, playerEntity.yaw);
+                        playerEntity.addChatMessage(new TranslatableTextComponent("spawn.teleported").setStyle(new Style().setColor(TextFormat.GOLD)), false);
+                        return 1;
+                    }));
 
-        CommandRegistry.INSTANCE.register(false, serverCommandSourceCommandDispatcher -> ServerCommandManager.literal("setspawn")
-                .requires(source -> source.hasPermissionLevel(4))
-                .executes(context -> {
-            ServerPlayerEntity playerEntity = context.getSource().getPlayer();
-            context.getSource().getWorld().setSpawnPos(playerEntity.getPos());
-            playerEntity.addChatMessage(new TranslatableTextComponent("spawn.set").setStyle(new Style().setColor(TextFormat.GOLD)), true);
-            return 1;
-        }));
+            serverCommandSourceCommandDispatcher.register(
+                    ServerCommandManager.literal("setspawn")
+                            .requires(source -> source.hasPermissionLevel(4))
+                            .executes(context -> {
+                                ServerPlayerEntity playerEntity = context.getSource().getPlayer();
+                                context.getSource().getWorld().setSpawnPos(playerEntity.getPos());
+                                playerEntity.addChatMessage(new TranslatableTextComponent("spawn.set").setStyle(new Style().setColor(TextFormat.GOLD)), false);
+                                return 1;
+                            })
+            );
+        });
     }
 }

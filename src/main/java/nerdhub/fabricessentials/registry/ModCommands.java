@@ -33,5 +33,9 @@ public class ModCommands {
         if (FabricEssentials.config.getBoolean("feature-spawn")) {
             SpawnCommands.registerSpawnCommands();
         }
+
+        if (FabricEssentials.config.getBoolean("feature-clearchat")) {
+            ClearChatCommands.registerClearChatCommands();
+        }
     }
 }
