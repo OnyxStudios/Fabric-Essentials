@@ -24,5 +24,11 @@
   "spawn.teleported": "Successfully teleported to spawn!",
   "spawn.set": "Successfully set the spawn position!",
   "fly.enabled": "Fly has been enabled.",
-  "fly.disabled": "Fly has been disabled."
+  "fly.disabled": "Fly has been disabled.",
+  "tps.uptime": "Uptime: %s",
+  "tps.tps": "TPS: %s",
+  "tps.maxmem": "Allocated Memory: %s MB",
+  "tps.freemem": "Free Memory: %s MB",
+  "back.nullentry": "You do not have an existing /back entry!",
+  "back.success": "Teleported to your previous position!"
 }

@@ -11,7 +11,7 @@ import net.minecraft.util.math.BlockPos;
 public class SpawnCommands {
 
     public static void registerSpawnCommands() {
-        CommandRegistry.INSTANCE.register(false, serverCommandSourceCommandDispatcher -> {
+        CommandRegistry.INSTANCE.register(true, serverCommandSourceCommandDispatcher -> {
             serverCommandSourceCommandDispatcher.register(
                     ServerCommandManager.literal("spawn").executes(context -> {
                         ServerPlayerEntity playerEntity = context.getSource().getPlayer();

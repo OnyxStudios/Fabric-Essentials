@@ -21,7 +21,7 @@ public class GamemodeHelper {
             ServerPlayerEntity serverPlayerEntity_1 = (ServerPlayerEntity)var4.next();
             if (serverPlayerEntity_1.interactionManager.getGameMode() != gameMode_1) {
                 serverPlayerEntity_1.setGameMode(gameMode_1);
-                method_13390((ServerCommandSource)commandContext_1.getSource(), serverPlayerEntity_1, gameMode_1);
+                method_13390(commandContext_1.getSource(), serverPlayerEntity_1, gameMode_1);
                 ++int_1;
             }
         }

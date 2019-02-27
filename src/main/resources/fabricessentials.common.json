@@ -1,8 +1,10 @@
 {
   "required": true,
-  "package": "nerdhub.fabricessentials.mixin",
+  "package": "nerdhub.fabricessentials.mixins",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
+    "MixinLivingEntity",
+    "MixinServerPlayerEntity"
   ],
   "injectors": {
     "defaultRequire": 1

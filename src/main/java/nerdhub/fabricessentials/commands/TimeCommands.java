@@ -17,7 +17,7 @@ public class TimeCommands {
     public static TimePoll timePoll;
 
     public static void registerTimeCommands() {
-        CommandRegistry.INSTANCE.register(false, serverCommandSourceCommandDispatcher -> {
+        CommandRegistry.INSTANCE.register(true, serverCommandSourceCommandDispatcher -> {
             serverCommandSourceCommandDispatcher.register(
                     ServerCommandManager.literal("day")
                     .requires(source -> source.hasPermissionLevel(4))

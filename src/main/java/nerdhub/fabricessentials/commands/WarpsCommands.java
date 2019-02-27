@@ -14,7 +14,7 @@ import net.minecraft.util.math.BlockPos;
 public class WarpsCommands {
 
     public static void registerWarpsCommands() {
-        CommandRegistry.INSTANCE.register(false, serverCommandSourceCommandDispatcher -> {
+        CommandRegistry.INSTANCE.register(true, serverCommandSourceCommandDispatcher -> {
             serverCommandSourceCommandDispatcher.register(
                     ServerCommandManager.literal("warp")
                             .then(ServerCommandManager.argument("name", StringArgumentType.string()).executes(context -> {

@@ -7,15 +7,15 @@ import net.minecraft.text.StringTextComponent;
 public class ClearChatCommands {
 
     public static void registerClearChatCommands() {
-        CommandRegistry.INSTANCE.register(false, serverCommandSourceCommandDispatcher -> {
+        CommandRegistry.INSTANCE.register(true, serverCommandSourceCommandDispatcher -> {
             serverCommandSourceCommandDispatcher.register(
                     ServerCommandManager.literal("cc")
-                    .executes(context -> {
-                        for (int i = 0; i < 100; i++) {
-                            context.getSource().getPlayer().addChatMessage(new StringTextComponent(" "), false);
-                        }
-                       return 0;
-                    })
+                            .executes(context -> {
+                                for (int i = 0; i < 100; i++) {
+                                    context.getSource().getPlayer().addChatMessage(new StringTextComponent(" "), false);
+                                }
+                                return 0;
+                            })
             );
 
             serverCommandSourceCommandDispatcher.register(

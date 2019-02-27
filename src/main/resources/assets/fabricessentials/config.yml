@@ -33,3 +33,11 @@ feature-spawn: true
 #Enable the clearchat feature
 #/cc personal /cca server wide
 feature-clearchat: true
+
+#Enable the tps feature
+#/tps
+feature-tps: true
+
+#Enable the back feature
+#/back
+feature-back: true

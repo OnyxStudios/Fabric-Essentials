@@ -17,7 +17,7 @@ public class HomeCommands {
     public static int maxPlayerHomes = FabricEssentials.config.getInt("player-homes-count");
 
     public static void registerHomeCommands() {
-        CommandRegistry.INSTANCE.register(false, serverCommandSourceCommandDispatcher -> {
+        CommandRegistry.INSTANCE.register(true, serverCommandSourceCommandDispatcher -> {
             serverCommandSourceCommandDispatcher.register(
                     ServerCommandManager
                             .literal("sethome")

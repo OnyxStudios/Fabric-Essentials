@@ -27,7 +27,7 @@ public class GamemodeCommands {
             put("gmsp", GameMode.SPECTATOR);
         }};
 
-        gamemodesMap.forEach((name, gameMode) -> CommandRegistry.INSTANCE.register(false, serverCommandSourceCommandDispatcher -> serverCommandSourceCommandDispatcher.register(
+        gamemodesMap.forEach((name, gameMode) -> CommandRegistry.INSTANCE.register(true, serverCommandSourceCommandDispatcher -> serverCommandSourceCommandDispatcher.register(
                 ServerCommandManager.literal(name)
                         .requires(source -> source.hasPermissionLevel(4))
                         .executes(context -> {
@@ -37,7 +37,7 @@ public class GamemodeCommands {
                         })
         )));
 
-        CommandRegistry.INSTANCE.register(false, serverCommandSourceCommandDispatcher -> {
+        CommandRegistry.INSTANCE.register(true, serverCommandSourceCommandDispatcher -> {
             ArgumentBuilder<ServerCommandSource, ?> builder = serverCommandSourceCommandDispatcher.getRoot().getChild("gamemode").createBuilder();
 
             for (GameMode mode : GameMode.values()) {

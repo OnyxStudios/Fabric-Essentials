@@ -37,5 +37,13 @@ public class ModCommands {
         if (FabricEssentials.config.getBoolean("feature-clearchat")) {
             ClearChatCommands.registerClearChatCommands();
         }
+
+        if (FabricEssentials.config.getBoolean("feature-tps")) {
+            TPSCommand.registerTPSCommand();
+        }
+
+        if (FabricEssentials.config.getBoolean("feature-back")) {
+            BackCommand.registerBackCommand();
+        }
     }
 }

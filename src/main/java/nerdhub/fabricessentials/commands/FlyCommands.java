@@ -10,7 +10,7 @@ import net.minecraft.text.TranslatableTextComponent;
 public class FlyCommands {
 
     public static void registerFlyCommands() {
-        CommandRegistry.INSTANCE.register(false, serverCommandSourceCommandDispatcher -> serverCommandSourceCommandDispatcher.register(
+        CommandRegistry.INSTANCE.register(true, serverCommandSourceCommandDispatcher -> serverCommandSourceCommandDispatcher.register(
                 ServerCommandManager.literal("fly")
                         .requires(source -> source.hasPermissionLevel(4))
                         .executes(context -> {

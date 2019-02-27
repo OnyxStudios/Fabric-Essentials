@@ -3,7 +3,7 @@
   "name": "Fabric Essentials",
   "description": "All the essentials you need for fabric",
   "version": "1.0.0",
-  "side": "universal",
+  "side": "server",
   "initializers": [
     "nerdhub.fabricessentials.FabricEssentials"
   ],
@@ -12,7 +12,6 @@
     "abusedlib": "*"
   },
   "mixins": {
-    "client": "fabricessentials.client.json",
     "common": "fabricessentials.common.json"
   }
 }
