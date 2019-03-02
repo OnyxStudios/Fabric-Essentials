@@ -10,7 +10,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(LivingEntity.class)
-public class MixingLivingEntity {
+public class MixinLivingEntity {
 
     @Inject(method = "onDeath", at = @At("HEAD"))
     private void onDeath(DamageSource damageSource_1, CallbackInfo ci) {
