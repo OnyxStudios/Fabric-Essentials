@@ -19,7 +19,6 @@ dependencies {
 	modCompile "net.fabricmc:fabric-loader:${loader_version}"
 	modCompile "net.fabricmc:fabric:${fabric_version}"
 
-	modCompile "abused_master.abusedlib:AbusedLib:${abusedlib_version}"
 	compileOnly "com.google.code.findbugs:jsr305:${findbugs_version}"
 }
 

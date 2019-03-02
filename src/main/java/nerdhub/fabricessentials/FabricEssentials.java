@@ -1,6 +1,5 @@
 package nerdhub.fabricessentials;
 
-import abused_master.abusedlib.utils.Config;
 import nerdhub.fabricessentials.registry.ModCommands;
 import nerdhub.fabricessentials.utils.TPSHelper;
 import net.fabricmc.api.ModInitializer;
@@ -11,7 +10,7 @@ import java.util.TimerTask;
 public class FabricEssentials implements ModInitializer {
 
     public static final String MODID = "fabricessentials";
-    public static Config config = new Config(MODID, FabricEssentials.class);
+    public static Config config = new Config();
     public static TPSHelper serverTimer;
     public Timer timer = new Timer();
 

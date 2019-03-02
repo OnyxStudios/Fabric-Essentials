@@ -8,8 +8,7 @@
     "nerdhub.fabricessentials.FabricEssentials"
   ],
   "requires": {
-    "fabric": "*",
-    "abusedlib": "*"
+    "fabric": "*"
   },
   "mixins": {
     "common": "fabricessentials.common.json"
